@@ -3,9 +3,9 @@ EnclosedPorch,0.0,0.0,208,14.25
 BsmtFinSF2,0.0,0.0,167,11.44
 OverallCond,3.5,7.5,125,8.56
 ScreenPorch,0.0,0.0,116,7.95
-LotFrontage,31.5,107.5,106,7.26
 MSSubClass,-55.0,145.0,103,7.05
-MasVnrArea,-246.375,410.625,98,6.71
+MasVnrArea,-249.0,415.0,96,6.58
+LotFrontage,27.5,111.5,88,6.03
 BsmtHalfBath,0.0,0.0,82,5.62
 OpenPorchSF,-102.0,170.0,77,5.27
 LotArea,1481.5,17673.5,69,4.73
@@ -29,9 +29,9 @@ GarageCars,-0.5,3.5,5,0.34
 2ndFlrSF,-1092.0,1820.0,2,0.14
 OverallQual,2.0,10.0,2,0.14
 BsmtFullBath,-1.5,2.5,1,0.07
-GarageYrBlt,1903.5,2059.5,1,0.07
-FullBath,-0.5,3.5,0,0.0
 HalfBath,-1.5,2.5,0,0.0
+GarageYrBlt,1899.5,2063.5,0,0.0
+FullBath,-0.5,3.5,0,0.0
 Id,-728.5,2189.5,0,0.0
 MoSold,0.5,12.5,0,0.0
 YearRemodAdd,1911.5,2059.5,0,0.0
