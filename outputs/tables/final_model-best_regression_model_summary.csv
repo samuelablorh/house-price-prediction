@@ -1,12 +1,12 @@
-Value
-Gradient Boosting
-30400.93081041468
-5902.4909433977155
-27650.480622895277
-16511.334397834842
-0.9003237857132176
-28892.600652938847
-28198.871861101474
-16006.590433710251
-0.8963308270391763
-"{'model__learning_rate': 0.1, 'model__max_depth': 4, 'model__n_estimators': 200}"
+,Value
+Model,Gradient Boosting
+Initial CV RMSE,29814.242376162776
+Initial CV RMSE Std,4879.583897865228
+Initial Test RMSE,28613.2946468032
+Initial Test MAE,17511.918190962362
+Initial Test R2,0.8932613022666973
+Tuned CV RMSE,28493.966206277633
+Tuned Test RMSE,26601.271504200802
+Tuned Test MAE,16761.155700134463
+Tuned Test R2,0.9077447781846415
+Best Parameters,"{'model__learning_rate': 0.1, 'model__max_depth': 4, 'model__n_estimators': 200}"

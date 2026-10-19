@@ -1,9 +1,9 @@
-Model,Best CV RMSE,Best Parameters
-Gradient Boosting,28892.600652938847,"{'model__learning_rate': 0.1, 'model__max_depth': 4, 'model__n_estimators': 200}"
-Random Forest,30801.39316181164,"{'model__max_depth': 10, 'model__min_samples_leaf': 2, 'model__n_estimators': 100}"
-Elastic Net,32392.943662798865,"{'model__alpha': 0.1, 'model__l1_ratio': 0.8, 'model__max_iter': 20000}"
-Ridge,32466.726056512398,{'model__alpha': 10.0}
-SVR,33886.26232191096,"{'model__C': 100, 'model__epsilon': 0.1, 'model__kernel': 'linear'}"
-Lasso,34637.010410093084,"{'model__alpha': 100.0, 'model__max_iter': 20000}"
-KNN,35861.12823982768,"{'model__n_neighbors': 5, 'model__p': 1, 'model__weights': 'distance'}"
-Linear Regression,37207.10207606084,{'model__fit_intercept': False}
+,Model,Best CV RMSE,Best Parameters
+0,Gradient Boosting,29702.43024168557,"{'model__learning_rate': 0.1, 'model__max_depth': 4, 'model__n_estimators': 200}"
+1,Random Forest,30754.358889719133,"{'model__max_depth': 10, 'model__min_samples_leaf': 2, 'model__n_estimators': 100}"
+2,KNN,33978.88642021866,"{'model__n_neighbors': 7, 'model__p': 1, 'model__weights': 'distance'}"
+3,Lasso,37133.642571589524,"{'model__alpha': 100.0, 'model__max_iter': 20000}"
+4,Elastic Net,37135.06643725799,"{'model__alpha': 0.1, 'model__l1_ratio': 0.8, 'model__max_iter': 20000}"
+5,Ridge,37147.16316959994,{'model__alpha': 10.0}
+6,Linear Regression,37203.203177048104,{'model__fit_intercept': True}
+7,SVR,37956.65712108491,"{'model__C': 100, 'model__epsilon': 0.2, 'model__kernel': 'linear'}"
