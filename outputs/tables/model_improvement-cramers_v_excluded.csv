@@ -1,0 +1,25 @@
+,Feature_1,Feature_2,Reason
+0,MSZoning,PoolQC,Constant feature or insufficient variation
+1,Street,Alley,Constant feature or insufficient variation
+2,Street,PoolQC,Constant feature or insufficient variation
+3,Street,Fence,Constant feature or insufficient variation
+4,Alley,Utilities,Constant feature or insufficient variation
+5,Alley,Condition2,Constant feature or insufficient variation
+6,Alley,RoofMatl,Constant feature or insufficient variation
+7,Alley,PoolQC,Constant feature or insufficient variation
+8,Alley,MiscFeature,Constant feature or insufficient variation
+9,Utilities,PoolQC,Constant feature or insufficient variation
+10,Utilities,Fence,Constant feature or insufficient variation
+11,Utilities,MiscFeature,Constant feature or insufficient variation
+12,LandSlope,PoolQC,Constant feature or insufficient variation
+13,Condition2,PoolQC,Constant feature or insufficient variation
+14,BldgType,PoolQC,Constant feature or insufficient variation
+15,RoofMatl,MiscFeature,Constant feature or insufficient variation
+16,BsmtCond,PoolQC,Constant feature or insufficient variation
+17,Heating,PoolQC,Constant feature or insufficient variation
+18,CentralAir,PoolQC,Constant feature or insufficient variation
+19,Electrical,PoolQC,Constant feature or insufficient variation
+20,Electrical,MiscFeature,Constant feature or insufficient variation
+21,Functional,PoolQC,Constant feature or insufficient variation
+22,PavedDrive,PoolQC,Constant feature or insufficient variation
+23,PoolQC,MiscFeature,Constant feature or insufficient variation
