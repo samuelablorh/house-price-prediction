@@ -442,11 +442,6 @@ Low-information variables
 
 Establish a reference performance level before applying additional feature engineering and feature selection.
 
-### Results
-
-**Metric:** RMSE  
-**Score:** Example baseline RMSE
-
 ## 12. Model Selection
 
 ### Candidate Models
