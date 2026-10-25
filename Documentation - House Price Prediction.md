@@ -467,15 +467,17 @@ Establish a reference performance level before applying additional feature engin
 
 ## 13. Model Training
 
-**Model:** Linear Regression
+**Models:** Linear Regression, Ridge, Lasso, Elastic Net, Random Forest, Gradient Boosting, XGBoost, LightGBM, KNN, and SVR.
 
-**Features:** Selected numerical and encoded categorical features
+**Features:** Original numerical and categorical features, engineered features, and interaction terms.
 
-**Training Data:** Training dataset
+**Training Data:** Training dataset.
 
-**Parameters:** Default LinearRegression configuration
+**Preprocessing:** Missing-value handling, feature scaling, and one-hot encoding within a scikit-learn pipeline.
 
-**Random State:** 42
+**Hyperparameter Tuning:** Cross-validation with model-specific parameter grids.
+
+**Random State:** 42.
 
 ### Training Process
 
@@ -488,15 +490,17 @@ Establish a reference performance level before applying additional feature engin
 
 ## 14. Hyperparameter Tuning
 
-**Method:** Not required for basic Linear Regression.
+**Method:** Grid search with cross-validation.
+
+**Cross-Validation:** 5-fold cross-validation.
 
 ### Parameters Tested
 
-None
+Model-specific hyperparameters for Linear Regression, Ridge, Lasso, Elastic Net, Random Forest, Gradient Boosting, XGBoost, LightGBM, KNN, and SVR.
 
 ### Best Parameters
 
-Default LinearRegression configuration
+Selected the best hyperparameters for each model based on cross-validation performance. Linear Regression retained its default configuration.
 
 ## 15. Experiment Tracking
 
@@ -519,7 +523,7 @@ Notes
 - Lasso achieved the lowest tuned test RMSE (28,257.31), but model selection should follow the predefined CV criterion rather than choosing based on test performance.
 
 
-## 16 - 17. Model Evaluation & Consolidated Regression Model Comparison
+## 16. Model Evaluation & Consolidated Regression Model Comparison
 
 
 ### Baseline Model Results - Linear Regression
@@ -543,18 +547,18 @@ Notes
 | Linear Regression | 39,503.98       | 5,683.75            | 29,077.94         | 18,191.83        | 0.889767        | 39,209.58     | 29,085.52       | 18,190.33      | 0.889709      | `fit_intercept=False`                                    |
 
 
-## 18. Error Analysis
+## 17. Error Analysis
 
 ### Major Errors
 
 1. The tuned Gradient Boosting model achieved a test RMSE of 28,466.78 and MAE of 16,194.92.
-2. Some predictions may substantially overestimate or underestimate actual sale prices.
+2. Some predictions may substantially overestimate or underestimate actual salarys.
 3. Residual plots were used to examine prediction errors, their distribution, and possible patterns.
 
 ### Possible Causes
 
 1. Limited or missing predictive features.
-2. Nonlinear relationships between property characteristics and sale prices.
+2. Nonlinear relationships between property characteristics and salarys.
 3. Outliers or unusual properties.
 4. Feature interactions that the model does not fully capture.
 
@@ -565,7 +569,7 @@ Notes
 3. Examine residual plots for systematic patterns and unequal error variance.
 4. Compare model performance using cross-validation and appropriate evaluation metrics.
 
-## 19. Model Interpretation
+## 18. Model Interpretation
 
 ### Feature Importance
 
@@ -584,7 +588,7 @@ Methods: Permutation importance and regression coefficients where applicable.
 
 Note: Confirm the specific leading features from your `best_model_feature_importance` results before naming them.
 
-## 20. Bias & Data Quality
+## 19. Bias & Data Quality
 
 ### Potential Bias
 
@@ -602,7 +606,7 @@ The Ames Housing dataset represents a specific housing market and period. Result
 
 These issues can affect model performance, interpretation, and generalization. The preprocessing pipeline helps handle missing values, feature scaling, and categorical encoding, but it cannot eliminate dataset bias or guarantee accurate predictions on data outside the original distribution.
 
-## 21. Final Model
+## 20. Final Model
 
 **Model:** Gradient Boosting Regressor  
 **Version:** 1.0  
@@ -631,7 +635,7 @@ Random State: 42
 |Test MAE|16,552.90|16,194.92|
 |Test R²|0.901522|0.894352|
 
-**Validation Note:** Gradient Boosting was selected because it achieved the lowest tuned cross-validation RMSE of **28,665.81** among the eight candidate models. Tuning improved its cross-validation RMSE by approximately **5.23%** and reduced test MAE from **16,552.90** to **16,194.92**. However, test RMSE increased from **27,483.82** to **28,466.78**, while test R² decreased from **0.901522** to **0.894352**. This indicates that tuning improved average cross-validation performance and MAE but did not improve every test metric. The final model explains approximately **89.44%** of the variation in house sale prices on the test set.
+**Validation Note:** Gradient Boosting was selected because it achieved the lowest tuned cross-validation RMSE of **28,665.81** among the eight candidate models. Tuning improved its cross-validation RMSE by approximately **5.23%** and reduced test MAE from **16,552.90** to **16,194.92**. However, test RMSE increased from **27,483.82** to **28,466.78**, while test R² decreased from **0.901522** to **0.894352**. This indicates that tuning improved average cross-validation performance and MAE but did not improve every test metric. The final model explains approximately **89.44%** of the variation in house salarys on the test set.
 
 ### Feature Importance
 
@@ -656,7 +660,7 @@ Feature importance was evaluated using permutation importance. Higher values ind
 
 The tuned Gradient Boosting Regressor is the selected model based on cross-validation performance. It provides strong predictive performance, with a test R² of **0.894352** and test MAE of **16,194.92**. Its feature-importance results identify overall quality and living area as the strongest predictive features. These results apply to the test data used in this project; performance on new housing data may differ.
 
-## 22. Model Persistence
+## 21. Model Persistence
 
 **Method:** Joblib
 
@@ -670,7 +674,7 @@ models/
 The saved pipeline contains the preprocessing required to transform incoming data before generating predictions.
 
 
-## 23. Prediction / Inference
+## 22. Prediction / Inference
 
 ### Input Requirements
 
@@ -705,13 +709,13 @@ MasVnrArea:
 ### Prediction Output
 
 ```
-Predicted Sale Price: [Model Prediction]
+Predicted salary: [Model Prediction]
 ```
 
-The predicted sale price is an estimate based on the property details provided. Prediction quality may vary for properties that differ substantially from the training data.
+The predicted salary is an estimate based on the property details provided. Prediction quality may vary for properties that differ substantially from the training data.
 
 
-## 24. Deployment (Future)
+## 23. Deployment (Future)
 
 **Deployment Type:** Local application / API / Web application
 
@@ -726,7 +730,7 @@ deployment/
  └── config/
 ```
 
-## 25. Testing (Future)
+## 24. Testing (Future)
 
 ### Tests
 
@@ -740,13 +744,13 @@ deployment/
 
 ### Results
 
-**Tests Passed:** Example
+**Tests Passed:** N/A
 
-**Tests Failed:** 0
+**Tests Failed:** N/A
 
 
 
-## 26. Problems & Solutions
+## 25. Problems & Solutions
 
 | Problem | Cause | Solution |
 |---|---|---|
@@ -759,7 +763,7 @@ deployment/
 | Inconsistent model performance | Differences between validation and test results | Compare cross-validation and test metrics |
 | Model reproducibility | Different settings or preprocessing between runs | Fixed random seed, pipelines, and saved model artifacts |
 
-## 27. Lessons Learned
+## 26. Lessons Learned
 
 ### Machine Learning
 
@@ -783,7 +787,7 @@ deployment/
 3. Reproducibility should be considered from the beginning.
 4. Comparing initial and tuned models helps explain why the final model was selected.
 
-## 28. Limitations
+## 27. Limitations
 
 1. The dataset represents the Ames, Iowa housing market and a specific period; results may not generalize to other markets or time periods.
 2. The final model's performance depends on the quality, completeness, and relevance of its input features.
@@ -793,7 +797,7 @@ deployment/
 6. Feature importance describes predictive contribution, not causal relationships.
 7. The model has not been demonstrated to perform equally well on housing data from other locations.
 
-## 29. Future Improvements
+## 28. Future Improvements
 
 1. Evaluate the model on a genuinely new housing dataset or a future-period holdout.
 2. Investigate observations with the largest absolute prediction errors.
@@ -801,14 +805,14 @@ deployment/
 4. Evaluate the stability of feature importance across cross-validation folds.
 5. Compare further hyperparameter configurations using a controlled validation process.
 6. Develop an API for serving predictions.
-7. Build a user-facing interface for entering property details and obtaining estimated sale prices.
+7. Build a user-facing interface for entering property details and obtaining estimated salarys.
 8. Monitor prediction performance if the model is deployed.
 
-## 30. Final Results
+## 29. Final Results
 
 ### Summary
 
-The project developed an end-to-end machine learning workflow to predict residential sale prices using the Ames Housing Dataset. The workflow included data preprocessing, model comparison, cross-validation, hyperparameter tuning, model evaluation, residual diagnostics, feature-importance analysis, and model persistence.
+The project developed an end-to-end machine learning workflow to predict residential salarys using the Ames Housing Dataset. The workflow included data preprocessing, model comparison, cross-validation, hyperparameter tuning, model evaluation, residual diagnostics, feature-importance analysis, and model persistence.
 
 ### Final Model
 
@@ -828,13 +832,13 @@ The project developed an end-to-end machine learning workflow to predict residen
 
 1. Data preprocessing was necessary to prepare the housing features for model training.
 2. Gradient Boosting achieved the lowest tuned cross-validation RMSE among the eight evaluated models.
-3. The final model achieved a test R² of **0.894352**, explaining approximately 89.44% of the variation in test sale prices.
+3. The final model achieved a test R² of **0.894352**, explaining approximately 89.44% of the variation in test salarys.
 4. **OverallQual**, **GrLivArea**, **TotalBsmtSF**, and **GarageCars** were the most influential features according to permutation importance.
 5. Hyperparameter tuning improved cross-validation RMSE, but test RMSE and R² were slightly worse than those of the initial Gradient Boosting model.
 6. The final model is suitable as a predictive baseline for the dataset, but performance on other housing markets requires further validation.
 
 
-## 31. Project Structure
+## 30. Project Structure
 
 ```text
 house-price-prediction/
@@ -865,7 +869,7 @@ house-price-prediction/
  └── .gitignore
 ```
 
-## 32. References
+## 31. References
 
 ### Dataset
 
@@ -887,7 +891,7 @@ house-price-prediction/
 
 - Machine learning reference materials
 
-## 33. Progress Log
+## 32. Progress Log
 
 ### LOG - STARTUP
 #### 2026-10-09
@@ -903,7 +907,7 @@ house-price-prediction/
 #### 2026-10-11
 
 >**Task:** Data preparation and cleaning
->**What I Did:** Loaded the dataset; inspected its structure, dimensions, data types, missing values, duplicates, outliers, inconsistencies, and target variable (`SalePrice`); created reusable functions for data inspection and cleaning.
+>**What I Did:** Loaded the dataset; inspected its structure, dimensions, data types, missing values, duplicates, outliers, inconsistencies, and target variable (`salary`); created reusable functions for data inspection and cleaning.
 >**Result:** Initial data quality checks were completed, and potential cleaning requirements were identified.
 >**Problem:** Some data quality issues required further investigation before making cleaning decisions.
 >**Decision:** Investigate the findings before applying potentially destructive cleaning operations.
@@ -913,7 +917,7 @@ house-price-prediction/
 #### 2026-10-11
 
 >**Task:** Exploratory data analysis
->**What I Did:** Analyzed the target variable, numerical and categorical feature distributions, relationships with `SalePrice`, correlations, outliers, and potential feature interactions; documented important patterns and findings.
+>**What I Did:** Analyzed the target variable, numerical and categorical feature distributions, relationships with `salary`, correlations, outliers, and potential feature interactions; documented important patterns and findings.
 >**Result:** Identified potentially influential predictors, including `OverallQual`, `GrLivArea`, and `GarageCars`, alongside skewed distributions, rare categories, correlations, and extreme values.
 >**Problem:** Some features showed skewness, unusual values, and relationships that required further investigation.
 >**Decision:** Use the findings to guide feature engineering, transformations, encoding, and outlier handling.
